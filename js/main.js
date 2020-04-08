@@ -4,7 +4,7 @@
 
 $(window).load(function () {
 
-    $('#loadding').remove();
+    removeElement(document.getElementById('loadding'));
     console.log('所有资源加载完毕----------');
 
     $(window).scroll(function () {
@@ -101,5 +101,13 @@ function bindEvenInit() {
     $('.navbtn').click(function () {
         $('#slideList').css('display','none')
     })
+}
+
+
+function removeElement(_element){
+    var _parentElement = _element.parentNode;
+    if(_parentElement){
+        _parentElement.removeChild(_element);
+    }
 }
 
