@@ -4,7 +4,7 @@
 
 $(window).load(function () {
 
-    removeElement(document.getElementById('loadding'));
+    // removeElement(document.getElementById('loadding'));
     console.log('所有资源加载完毕----------');
 
     $(window).scroll(function () {
@@ -64,20 +64,22 @@ $(window).load(function () {
 
 function audioInit() {
     var audio =$('#audio').children('audio')[0];
-    var audioControls=$('#audio').children('.audio-controls')[0]
     if(audio){
-        audio.volume=0.05;//默认音量
-        $('#audioClick').click(function () {
-            if(audio.paused){
-                audio.play();
-                audioControls.style.animationPlayState="running"
-                $('#audioClick').addClass('icon-play_fill').removeClass('icon-zantingtingzhi')
-            }else {
-                audio.pause();
-                audioControls.style.animationPlayState="paused"
-                $('#audioClick').addClass('icon-zantingtingzhi').removeClass('icon-play_fill')
-            }
-        })
+        var audioControls=$('#audio').children('.audio-controls')[0]
+        if(audio){
+            audio.volume=0.05;//默认音量
+            $('#audioClick').click(function () {
+                if(audio.paused){
+                    audio.play();
+                    audioControls.style.animationPlayState="running"
+                    $('#audioClick').addClass('icon-play_fill').removeClass('icon-zantingtingzhi')
+                }else {
+                    audio.pause();
+                    audioControls.style.animationPlayState="paused"
+                    $('#audioClick').addClass('icon-zantingtingzhi').removeClass('icon-play_fill')
+                }
+            })
+        }
     }
 }
 
