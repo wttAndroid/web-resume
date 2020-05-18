@@ -1,37 +1,27 @@
-
-
-
-
-$(window).load(function () {
-
+$(window).on('load',function () {
     // removeElement(document.getElementById('loadding'));
-    console.log('所有资源加载完毕----------');
-
+    console.log('---loadCallBack---');
     $(window).scroll(function () {
         var a,b,c;
         a=$(window).height();//页面高度
         b=$(this).scrollTop();//获取滚动高度
-
-
         $('.page').each(function () {
             c=$(this).offset().top;
-
-
             var arrMastering=[{
-                 title:'HTML',
-                 value:'80%'
+                title:'HTML',
+                value:'80%'
             },{
                 title:'CSS',
-                value:'50%'
+                value:'80%'
             },{
                 title:'JS',
-                value:'60%'
-            },{
-                title:'JQ',
                 value:'70%'
             },{
+                title:'JQ',
+                value:'60%'
+            },{
                 title:'Vue',
-                value:'20%'
+                value:'75%'
             }]
 
             var tag=true;
@@ -57,11 +47,15 @@ $(window).load(function () {
 
 
 
-    audioInit();
+    // audioInit();//取消了播放音乐模块
     bindEvenInit();
-})
+});
 
 
+
+
+
+//播放音乐初始化方法
 function audioInit() {
     var audio =$('#audio').children('audio')[0];
     if(audio){
@@ -83,6 +77,8 @@ function audioInit() {
     }
 }
 
+
+//锚点定位
 function bindEvenInit() {
     $('.navbtn').bind("click touch",function () {
         //scrollTop 滚动到  $(this).attr('href')锚点关联id所在位置
@@ -96,16 +92,17 @@ function bindEvenInit() {
         $(this).popover('toggle')
     })
 
-
-    $('#slideBut').click(function () {
+    $('#slideBut').on("click touch",function () {
         $('#slideList').slideToggle(1000);
     })
+
     $('.navbtn').click(function () {
         $('#slideList').css('display','none')
     })
 }
 
 
+//删除元素函数
 function removeElement(_element){
     var _parentElement = _element.parentNode;
     if(_parentElement){

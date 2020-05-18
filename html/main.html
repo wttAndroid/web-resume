@@ -1,6 +1,6 @@
 <div id="wrap">
     <section class="header-area header-bg">
-        <div id="particles-js"></div>
+        <div id="particles-js" class="particles-js"></div>
         <div class="page page1" id="page1" name="page1">
             <div class="page1-box container animateload">
                 <div class="row">
@@ -78,7 +78,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-md-6">
                         <div class="box-left">
-                            <h1 class="page-title">Mastering</h1>
+                            <h1 class="page-title">My Mastering</h1>
                             <div class="left-body">
                                 <ul>
                                     <li>
@@ -124,7 +124,7 @@
                                     <div class="sitem-icon"><i class="iconfont icon-biaoqian"></i></div>
                                     <div class="sitem-info">
                                         <span>bootsrap</span>
-                                        <h5>掌握</h5>
+                                        <h5>了解</h5>
                                     </div>
                                 </div>
                             </div>
@@ -133,15 +133,6 @@
                                         <div class="sitem-icon"><i class="iconfont icon-biaoqian"></i></div>
                                     <div class="sitem-info">
                                         <span>Element</span>
-                                        <h5>了解</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="slist-item">
-                                    <div class="sitem-icon"><i class="iconfont icon-biaoqian"></i></div>
-                                    <div class="sitem-info">
-                                        <span>Muse</span>
                                         <h5>掌握</h5>
                                     </div>
                                 </div>
@@ -150,8 +141,17 @@
                                 <div class="slist-item">
                                     <div class="sitem-icon"><i class="iconfont icon-biaoqian"></i></div>
                                     <div class="sitem-info">
-                                        <span>less</span>
-                                        <h5>了解</h5>
+                                        <span>mint-ui</span>
+                                        <h5>掌握</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="slist-item">
+                                    <div class="sitem-icon"><i class="iconfont icon-biaoqian"></i></div>
+                                    <div class="sitem-info">
+                                        <span>scss</span>
+                                        <h5>掌握</h5>
                                     </div>
                                 </div>
                             </div>
@@ -201,7 +201,7 @@
 
         <div class="page page5" id="page5" name="page5">
             <div class="page3-box container">
-                <h1 class="page-title">production </h1>
+                <h1 class="page-title">My Production </h1>
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-12">
                             <a class="box-item" href="https://lab508.gitee.io/">
@@ -209,7 +209,7 @@
                                     <h4>508工作室</h4>
                                     <P>晋城职业技术学院508工作室独立站点的维护</P>
                                 </div>
-                                <img src="./src/img/box1.gif">
+                                <img src="./src/img/box1.png">
                             </a>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -218,7 +218,7 @@
                                 <h4>蘑菇街</h4>
                                 <P>Vue蘑菇街商城案例</P>
                             </div>
-                            <img src="./src/img/box2.gif">
+                            <img src="./src/img/box2.png">
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -227,16 +227,16 @@
                                 <h4>购物街</h4>
                                 <P>小程序购物街商城案例</P>
                             </div>
-                            <img src="./src/img/box3.gif">
+                            <img src="./src/img/box3.png">
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <a class="box-item" href="https://wttandroid.github.io/">
+                        <a class="box-item" href="">
                             <div class="item-zhez">
                                 <h4>个人简历</h4>
                                 <P>html,css,jq,bootsrap搭建个人简历网站</P>
                             </div>
-                            <img src="./src/img/box4.gif">
+                            <img src="./src/img/box4.png">
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -245,7 +245,7 @@
                                 <h4>校园约吧</h4>
                                 <P>Vue移动端校园项目</P>
                             </div>
-                            <img src="./src/img/box5.gif">
+                            <img src="./src/img/box5.jpg">
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -254,7 +254,7 @@
                                 <h4>二维码</h4>
                                 <P>java二维码生成器小程序</P>
                             </div>
-                            <img src="./src/img/box6.gif">
+                            <img src="./src/img/box6.jpeg">
                         </a>
                     </div>
                 </div>
@@ -325,21 +325,23 @@
                 <a class="navbtn" href="#page5"></a>
                 <a class="navbtn" href="#page6"></a>
             </div>
-            <div id="audio">
-<!--            autoplay="autoplay"取消自动播放
-                preload="auto" 取消预加载-->
-                <audio  loop  volume="0.2">
-                    <source src="./src/Chance.mp3" type="audio/mpeg" >
-                </audio>
-                <div class="audio-controls">
-                    <img src="./src/img/toux.jpeg">
-                </div>
-                <span class="iconfont icon-play_fill" id="audioClick"></span>
-            </div>
+
+<!--       取消了播放音乐模块     -->
+<!--            <div id="audio">-->
+<!--&lt;!&ndash;            autoplay="autoplay"取消自动播放-->
+<!--                preload="auto" 取消预加载&ndash;&gt;-->
+<!--                <audio  loop  volume="0.2">-->
+<!--                    <source src="./src/Chance.mp3" type="audio/mpeg" >-->
+<!--                </audio>-->
+<!--                <div class="audio-controls">-->
+<!--                    <img src="./src/img/toux.jpeg">-->
+<!--                </div>-->
+<!--                <span class="iconfont icon-play_fill" id="audioClick"></span>-->
+<!--            </div>-->
         </div>
         <div id="navbar-banner">
             <div class="container">
-                <div class="clearFix"><span class="iconfont icon-lie" id="slideBut"></span></div>
+                <div class="clearFix"><span class="iconfont icon-lie slideBut" id="slideBut"></span></div>
                 <ul id="slideList">
                     <li><a class="navbtn" href="#page1">Home</a></li>
                     <li><a class="navbtn" href="#next-one">About Me</a></li>
@@ -352,11 +354,6 @@
         </div>
 
     </section>
-<!--    <div  id='loadding'>-->
-<!--        <span></span>-->
-<!--        <span></span>-->
-<!--        <span></span>-->
-<!--    </div>-->
 </div>
-<script type="text/javascript" src="js/lizi/particles.min.js"></script>
-<script type="text/javascript" src="js/lizi/pagit branchrticles.activate.js"></script>
+<script type="text/javascript" src="lib/lizi/particles.min.js"></script>
+<script type="text/javascript" src="lib/lizi/particles.activate.js"></script>

@@ -10,40 +10,30 @@
 
 <!-- CSS引用-->
     <!-- bootsarap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
 <!--     粒子样式-->
-    <link rel="stylesheet" href="js/lizi/style.css">
+    <link rel="stylesheet" href="lib/lizi/style.css">
 <!--    自己的CSS-->
-    <link rel="stylesheet/less" href="src/css/base.less">
+<!--    <link rel="stylesheet/less" href="src/css/base.less">-->
+    <link rel="stylesheet" href="src/css/base.min.css">
 </head>
 <body>
 
 <!--JS  -->
     <!--    less-->
-<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+<script src="lib/less.min.js"></script>
     <!--    jq,bootsrap-->
-<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-
+<script src="lib/jquery.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
 
 <!--    被替换的html-->
 <div id="box"></div>
 <script type="text/javascript">
-        $('#box').load('html/main.html')
+    $('#box').load('html/main.html')
 </script>
-
-<!--less-->
-<script type="text/javascript">
-    less.modifyVars({
-        '@index': 2    //可以在html中设置less中的变量，如果设置了，则优先用我们这里设置的
-    })
-</script>
-
 
 <!--自己的JS-->
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/main.min.js"></script>
 
 </body>
 </html>
