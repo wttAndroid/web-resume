@@ -1,12 +1,12 @@
 <div id="wrap">
     <section class="header-area header-bg">
-        <div id="particles-js" class="particles-js"></div>
+        <div id="particles" class="particles"></div>
         <div class="page page1" id="page1" name="page1">
             <div class="page1-box container animateload">
                 <div class="row">
                     <div class="col-lg-10 col-md-10 col-sm-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 box-page">
-                        <h1>Hello,I`m WeiTingting</h1>
-                        <p class="box-info">一个追梦在前端路上的小白</p>
+                        <h1>{{configData.page1.titleEn}}</h1>
+                        <p class="box-info">{{configData.page1.title}}</p>
                         <p class="box-font">Please try to <span class="box-change">understand me !!!</span></p></div>
                 </div>
                 <a class="next-bt navbtn" href="#next-one"><span>Read more</span></a>
@@ -19,18 +19,17 @@
                 <div class="row">
                     <div class="col-xs-12 col-md-5">
                         <div class="box-image">
-                          <img src="./src/img/page1.jpg">
+                          <img :src="configData.page2.authorImg">
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-7 box-info">
                         <h1 class="page-title">About Me</h1>
                         <h2>- 幸会</h2>
-                        <p>我叫卫婷婷，是一名刚步入社会的毕业生，毕业于晋城职业技术学院：软件与信息服务专业。</p>
+                        <p>{{configData.page2.xinhui}}</p>
                         <h2>- 求职意向</h2>
-                        <p>前端开发，利用各种技巧实现交互丰富的界面。</p>
+                        <p>{{configData.page2.qiuzhi}}</p>
                         <h2>- 关于我</h2>
-                        <p> 起初学习的是java，安卓开发，后来转战到前端开发。
-                            我集中利用大学学习时间进一步学习了html5,css3,javaScript和Vue框架等等，自学做Vue有关的Demo</p>
+                        <p>{{configData.page2.guanyuwo}}</p>
                         <p>I hope I can make continuous progress ~</p>
                     </div>
                 </div>
@@ -41,33 +40,12 @@
             <div class="page3-box container">
                 <h1 class="page-title">My Services</h1>
                 <div class="row">
-                    <div class="col-xs-12 col-md-3 box-item">
-                        <div class="box-xz"><i class="iconfont icon-diannao"></i></div>
-                        <div class="box-info">
-                            <h5>PS切图</h5>
-                            <p>从PSD上切出页面需要的图片<br></p>
-                        </div>
-                    </div>
-                    <div class="col-xs-12  col-md-3 box-item">
-                        <div class="box-xz"><i class="iconfont icon-qianbi1"></i></div>
-                        <div class="box-info">
-                            <h5>网页制作</h5>
-                            <p>响应式页面<br>css动画效果</p>
-                        </div>
-                    </div>
-                    <div class="col-xs-12  col-md-3 box-item">
-                        <div class="box-xz"><i class="iconfont icon-tubiao-"></i></div>
-                        <div class="box-info">
-                            <h5>前端功能</h5>
-                            <p>JS完成常见的前端功能<br>用AJAX读取后台数据</p>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-md-3 box-item">
-                        <div class="box-xz"><i class="iconfont icon-shouji"></i></div>
-                        <div class="box-info">
-                            <h5>移动端</h5>
-                            <p>移动端页面的书写</p>
-                        </div>
+                    <div class="col-xs-12 col-md-3 box-item" v-for="(item,index) in configData.page3" :key="index">
+                          <div class="box-xz"><i class="iconfont" :class="item.icon"></i></div>
+                          <div class="box-info">
+                           <h5>{{item.title}}</h5>
+                           <p v-for="(item2,index2) in item.msg" :key="index2">{{item2}}<br></p>
+                           </div>
                     </div>
                 </div>
             </div>
@@ -81,116 +59,36 @@
                             <h1 class="page-title">My Mastering</h1>
                             <div class="left-body">
                                 <ul>
-                                    <li>
-                                            <div class="title orange"></div>
-                                            <div class="date">2020/6——毕业</div>
-                                            <div class="desc">
-                                                <h3>晋城职业技术学院</h3>
-                                                <h4>加入508工作室组织 / 维护508工作室</h4>
-                                                <h4>学习搭建Vue基本Demo</h4>
-                                                <h4>HTML搭建个人简历网站</h4>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="title blue"></div>
-                                            <div class="date">2019/9——2020/6</div>
-                                            <div class="desc">
-                                                <h3>晋城职业技术学院</h3>
-                                                <h4>学习JavaScript / jq / css / html / vue/ PSD切图等</h4>
-                                                <h4>构建页面 / 利用JS、CSS3书写前端功能，让页面更充实丰富。并将代码上传到代码托管平台上</h4>
-                                                <h4>获得Web前段开发1+X证书</h4>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="title green"></div>
-                                            <div class="date">2018/9——2019/9</div>
-                                            <div class="desc">
-                                                <h3>晋城职业技术学院</h3>
-                                                <h4>学习java语言</h4>
-                                                <h4>利用Android、sql等书写页面功能</h4>
-                                                <h4>参加大学生职业院校移动互联技能大赛</h4>
-                                                <h4>获得全国计算机等级二级证书</h4>
-                                                <h4>国家励志奖学金</h4>
-                                            </div>
-                                        </li>
+                                    <li v-for="(item,index) in configData.page4.course" :key="index">
+                                        <div class="title orange"></div>
+                                        <div class="date">{{item.date}}</div>
+                                        <div class="desc">
+                                            <h3>{{item.desc.title}}</h3>
+                                            <h4 v-for="(item2,index2) in item.desc.list" :key="index2">{{item2}}</h4>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-6 box-right">
                         <div class="row singlelist">
-                            <div class="col-lg-6">
+                            <div class="col-lg-6" v-for="(item,index) in configData.page4.singlelist" :key="index">
                                 <div class="slist-item">
                                     <div class="sitem-icon"><i class="iconfont icon-biaoqian"></i></div>
                                     <div class="sitem-info">
-                                        <span>bootsrap</span>
-                                        <h5>了解</h5>
+                                        <span>{{item.title}}</span>
+                                        <h5>{{item.text}}</h5>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="slist-item">
-                                        <div class="sitem-icon"><i class="iconfont icon-biaoqian"></i></div>
-                                    <div class="sitem-info">
-                                        <span>Element</span>
-                                        <h5>掌握</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="slist-item">
-                                    <div class="sitem-icon"><i class="iconfont icon-biaoqian"></i></div>
-                                    <div class="sitem-info">
-                                        <span>mint-ui</span>
-                                        <h5>掌握</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="slist-item">
-                                    <div class="sitem-icon"><i class="iconfont icon-biaoqian"></i></div>
-                                    <div class="sitem-info">
-                                        <span>scss</span>
-                                        <h5>掌握</h5>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                         <div class="proresslist row">
-                            <div class="proress col-xs-12 col-md-6">
-                                <div class="propress-title">HTML
+                            <div class="proress col-xs-12 col-md-6" v-for="(item,index) in configData.page4.proresslist" :key="index">
+                                <div class="propress-title">{{item.title}}
                                 </div>
                                 <div class="propress-bar">
-                                    <div class="bar-propress"><span>90%</span></div>
-                                </div>
-                            </div>
-                            <div class="proress col-xs-12 col-md-6">
-                                <div class="propress-title">CSS
-                                </div>
-                                <div class="propress-bar">
-                                    <div class="bar-propress"><span>90%</span></div>
-                                </div>
-                            </div>
-                            <div class="proress col-xs-12 col-md-6">
-                                <div class="propress-title">JS
-                                </div>
-                                <div class="propress-bar">
-                                    <div class="bar-propress"><span>90%</span></div>
-                                </div>
-                            </div>
-                            <div class="proress col-xs-12 col-md-6">
-                                <div class="propress-title">JQ
-                                </div>
-                                <div class="propress-bar">
-                                    <div class="bar-propress"><span>90%</span></div>
-                                </div>
-                            </div>
-                            <div class="proress col-xs-12 col-md-6">
-                                <div class="propress-title">Vue
-                                </div>
-                                <div class="propress-bar">
-                                    <div class="bar-propress"><span>90%</span></div>
+                                    <div class="bar-propress"><span>{{item.value}}</span></div>
                                 </div>
                             </div>
                         </div>
@@ -203,59 +101,14 @@
             <div class="page3-box container">
                 <h1 class="page-title">My Production </h1>
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                            <a class="box-item" href="https://lab508.gitee.io/">
+                    <div class="col-lg-4 col-md-6 col-sm-12" v-for="(item,index) in configData.page5">
+                            <a class="box-item" :href="item.href">
                                 <div class="item-zhez">
-                                    <h4>508工作室</h4>
-                                    <P>晋城职业技术学院508工作室独立站点的维护</P>
+                                    <h4>{{item.title}}</h4>
+                                    <P>{{item.content}}</P>
                                 </div>
-                                <img src="./src/img/box1.png">
+                                <img :src="item.image">
                             </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <a class="box-item" href="https://github.com/wttAndroid/MyShoppingStreet">
-                            <div class="item-zhez">
-                                <h4>蘑菇街</h4>
-                                <P>Vue蘑菇街商城案例</P>
-                            </div>
-                            <img src="./src/img/box2.png">
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <a class="box-item">
-                            <div class="item-zhez">
-                                <h4>购物街</h4>
-                                <P>小程序购物街商城案例</P>
-                            </div>
-                            <img src="./src/img/box3.png">
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <a class="box-item" href="">
-                            <div class="item-zhez">
-                                <h4>个人简历</h4>
-                                <P>html,css,jq,bootsrap搭建个人简历网站</P>
-                            </div>
-                            <img src="./src/img/box4.png">
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <a class="box-item">
-                            <div class="item-zhez">
-                                <h4>校园约吧</h4>
-                                <P>Vue移动端校园项目</P>
-                            </div>
-                            <img src="./src/img/box5.jpg">
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <a class="box-item">
-                            <div class="item-zhez">
-                                <h4>二维码</h4>
-                                <P>java二维码生成器小程序</P>
-                            </div>
-                            <img src="./src/img/box6.jpeg">
-                        </a>
                     </div>
                 </div>
             </div>
@@ -277,15 +130,15 @@
                             <ul class="page-list">
                                 <li><a role="button"
                                        data-toggle="tooltip" data-placement="top" title="Github"
-                                        rel="https://github.com/wttAndroid">
+                                       :href="configData.page6.github">
                                 <i class="iconfont icon-github"></i></a></li>
 
                                 <li><a role="button"
-                                       data-toggle="tooltip" data-placement="top" title="哔哩哔哩暂无">
+                                       data-toggle="tooltip" data-placement="top" title="哔哩哔哩" :href="configData.page6.bili">
                                     <i class="iconfont icon-bilibili"></i></a></li>
                                 <li><a role="button"
                                        data-toggle="tooltip" data-placement="top" title="邮箱"
-                                       href="Mailto:1457321681@qq.com?Subject=邮箱标题&Body=邮箱内容！"><i class="iconfont icon-youxiang"></i></a></li>
+                                       :href="configData.page6.email"><i class="iconfont icon-youxiang"></i></a></li>
 
                                 <li><a class="element"
                                        role="button"
@@ -295,7 +148,7 @@
                                        data-trigger="focus"
                                        title="我的微信"
                                        data-html="true"
-                                       data-content="<img style='width:120px' src='./src/img/weix.jpg' alt='加载失败'>"><i class="iconfont icon-weixin1"></i></a></li>
+                                       :data-content="configData.page6.weixin"><i class="iconfont icon-weixin1"></i></a></li>
                                 <li><a class="element"
                                        role="button"
                                        data-placement="top"
@@ -304,9 +157,10 @@
                                        data-trigger="focus"
                                        data-html="true"
                                        title="我的QQ"
-                                       data-content="<img style='width:120px' src='./src/img/qq.jpg' alt='加载失败'>"><i class="iconfont icon-qq"></i></a></li>
+                                       :data-content="configData.page6.qq"><i class="iconfont icon-qq"></i></a></li>
                                 <li><a role="button"
-                                       data-toggle="tooltip" data-placement="top" title="知乎暂无"><i class="iconfont icon-zhihu-copy"></i></a></li></ul>
+                                       :href="configData.page6.zhihu"
+                                       data-toggle="tooltip" data-placement="top" title="知乎"><i class="iconfont icon-zhihu-copy"></i></a></li></ul>
                         </div>
                     </div>
                 </div>
@@ -325,7 +179,6 @@
                 <a class="navbtn" href="#page5"></a>
                 <a class="navbtn" href="#page6"></a>
             </div>
-
 <!--       取消了播放音乐模块     -->
 <!--            <div id="audio">-->
 <!--&lt;!&ndash;            autoplay="autoplay"取消自动播放-->
@@ -354,6 +207,6 @@
         </div>
 
     </section>
+
 </div>
-<script type="text/javascript" src="lib/lizi/particles.min.js"></script>
-<script type="text/javascript" src="lib/lizi/particles.activate.js"></script>
+

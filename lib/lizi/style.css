@@ -1,38 +1,8 @@
-
-
-.header-area {
-
-    position: relative;
-    z-index: 1;
-    height: 100%;
-}
-    .header-area:after {
-        position: absolute;
-        background-color: rgba(0,0,0,0.3);
-        width: 100%;
-        z-index: -1;
-        height: 100%;
-        content: "";
-        left: 0;
-        top: 0;
-        z-index: -1;
-    }
-
-/*.header-bg {*/
-/*    background-attachment: fixed;*/
-/*    background-position: center;*/
-/*    background-size: cover;*/
-/*}*/
-
-#particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    background-image: url(style.css);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-    left: 0;
-    top: 0;
+#particles{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
 }
