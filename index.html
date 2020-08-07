@@ -17,43 +17,49 @@
 
 <body>
 
-<!-- ---------------JS--------------------- -->
-
+  <!-- ---------------JS--------------------- -->
   <script src="lib/less.min.js"></script> <!--  less-->
   <script src="lib/jquery.min.js"></script><!-- jq,bootsrap-->
   <script src="lib/bootstrap.min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><!--  vue-->
+  <script src="lib/handlebars.min.js"></script><!-- 模板引擎js -->
   <script src="lib/lizi/particless.min.js"></script><!-- 粒子js -->
+  <!-- <link rel="import" href="html/main.html" id="boxs" /> -->
 
-  <!--    被替换的html-->
+  <!--主要内容html -->
   <div id="box"></div>
 
+
   <script type="module">
-    import configData from './src/config.js';//加载配置文件
+    import configData from './src/config.js'; //加载配置文件
+    var arrMastering=configData.page4.proresslist;//部分模块数据的动态渲染
 
-    $('#box').load('html/main.html',function () {
-      console.log('---loadCallBack---');
-      new Vue({
-        el:'#wrap',
-        data:{
-          configData,
-          arrMastering:[]
-        },
-        mounted(){
-          //加载粒子
-          particlesJS.load('particles', 'lib/lizi/particles.json', function() {
-            console.log('callback - particles.js config loaded');
-          });
-          this.arrMastering=this.configData.page4.proresslist;
+    $('#box').load('html/main.html',function(){
+      //1、渲染模板
+      var html= $('#box').html();//获取内容模板
+      var template = Handlebars.compile(html); //编译
+      var htmls=template(configData);//渲染模板
+      $('#box').html(htmls);//写入模板
 
-          //对window滚动的监听
-          window.addEventListener('scroll',this.scrollEvent)
-          this.bindEvenInit();
-        },
-        methods:{
+
+      //2、事件监听
+      particlesJS.load('particles', 'lib/lizi/particles.json', function() { //加载粒子
+          console.log('callback - particles.js config loaded');
+       });
+            
+       arrMastering=configData.page4.proresslist;//部分模块数据的动态渲染
+              
+       window.addEventListener('scroll',scrollEvent) //对window滚动的监听
+       bindEvenInit(); //锚点定位初始化
+    });
+
+
+         // 原生link import兼容性检测代码
+         function supportsImports() {  
+            return 'import' in document.createElement('link');
+          }
           //锚点定位初始化
-          bindEvenInit(){
+         function bindEvenInit(){
             $('.navbtn').bind("click touch",function () {
               //scrollTop 滚动到  $(this).attr('href')锚点关联id所在位置
               $('html,body').animate({scrollTop:($($(this).attr('href')).offset().top)},500)
@@ -73,9 +79,9 @@
             $('.navbtn').click(function () {
               $('#slideList').css('display','none')
             })
-          },
+          }
           //播放音乐初始化方法
-          audioInit(){
+          function audioInit(){
             var audio =$('#audio').children('audio')[0];
             if(audio){
               var audioControls=$('#audio').children('.audio-controls')[0]
@@ -94,15 +100,16 @@
                 })
               }
             }
-          },
-          //删除元素函数
-          removeElement(_element){
+          }
+          //删除元素方法
+          function removeElement(_element){
             var _parentElement = _element.parentNode;
             if(_parentElement){
               _parentElement.removeChild(_element);
             }
-          },
-          scrollEvent(){
+          }
+          //滚动事件监听
+          function scrollEvent(){
             var vues=this;
             var a,b,c;
             a=$(window).height();//页面高度
@@ -119,9 +126,9 @@
                 if($(this)[0].id=='page4'||tag){
                   tag=false
                   $(this).find('.proress').each(function (i,n) {
-                    $(this).find('.bar-propress')[0].style.width=vues.arrMastering[i].value;
-                    $(this).find('.propress-title').text(vues.arrMastering[i].title);
-                    $(this).find('.bar-propress').children('span').text(vues.arrMastering[i].value)
+                    $(this).find('.bar-propress')[0].style.width=arrMastering[i].value;
+                    $(this).find('.propress-title').text(arrMastering[i].title);
+                    $(this).find('.bar-propress').children('span').text(arrMastering[i].value)
                   })
                 }
               }else {
@@ -129,14 +136,10 @@
               }
             })
           }
-        }
-      })
-    });
+
   </script>
 
 
 </body>
-
-
 
 </html>

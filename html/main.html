@@ -1,212 +1,213 @@
 <div id="wrap">
-    <section class="header-area header-bg">
-        <div id="particles" class="particles"></div>
-        <div class="page page1" id="page1" name="page1">
-            <div class="page1-box container animateload">
-                <div class="row">
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 box-page">
-                        <h1>{{configData.page1.titleEn}}</h1>
-                        <p class="box-info">{{configData.page1.title}}</p>
-                        <p class="box-font">Please try to <span class="box-change">understand me !!!</span></p></div>
-                </div>
-                <a class="next-bt navbtn" href="#next-one"><span>Read more</span></a>
+  <section class="header-area header-bg">
+    <div id="particles" class="particles"></div>
+    <div class="page page1" id="page1" name="page1">
+      <div class="page1-box container animateload">
+        <div class="row">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 box-page">
+            <h1>{{page1.titleEn}}</h1>
+            <p class="box-info">{{page1.title}}</p>
+            <p class="box-font">Please try to <span class="box-change">understand me !!!</span></p>
+          </div>
+        </div>
+        <a class="next-bt navbtn" href="#next-one"><span>Read more</span></a>
+      </div>
+
+    </div>
+
+    <div class="page page2" id="next-one" name="next-one">
+      <div class="page2-box container">
+        <div class="row">
+          <div class="col-xs-12 col-md-5">
+            <div class="box-image">
+              <img src="./src/img/{{page2.authorImg}}">
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-7 box-info">
+            <h1 class="page-title">About Me</h1>
+            <h2>- 幸会</h2>
+            <p>{{page2.xinhui}}</p>
+            <h2>- 求职意向</h2>
+            <p>{{page2.qiuzhi}}</p>
+            <h2>- 关于我</h2>
+            <p>{{page2.guanyuwo}}</p>
+            <p>I hope I can make continuous progress ~</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page page3" id="page3" name="page3">
+      <div class="page3-box container">
+        <h1 class="page-title">My Services</h1>
+        <div class="row">
+
+          {{#each page3}}
+          <div class="col-xs-12 col-md-3 box-item">
+            <div class="box-xz"><i class="iconfont {{this.icon}}"></i></div>
+            <div class="box-info">
+              <h5>{{this.title}}</h5>
+              {{#each this.msg}}
+              <p>{{this}}<br></p>
+              {{/each}}
             </div>
 
+          </div>
+          {{/each}}
         </div>
+      </div>
+    </div>
 
-        <div class="page page2" id="next-one" name="next-one">
-            <div class="page2-box container">
-                <div class="row">
-                    <div class="col-xs-12 col-md-5">
-                        <div class="box-image">
-                          <img :src="configData.page2.authorImg">
-                        </div>
+    <div class="page page4" id="page4" name="page4">
+      <div class="page3-box container">
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <div class="box-left">
+              <h1 class="page-title">My Mastering</h1>
+              <div class="left-body">
+                <ul>
+                  {{#each page4.course}}
+                  <li>
+                    <div class="title orange"></div>
+                    <div class="date">{{this.date}}</div>
+                    <div class="desc">
+                      <h3>{{this.desc.title}}</h3>
+                      {{#each this.desc.list}}
+                      <h4>{{this}}</h4>
+                      {{/each}}
                     </div>
-                    <div class="col-xs-12 col-md-7 box-info">
-                        <h1 class="page-title">About Me</h1>
-                        <h2>- 幸会</h2>
-                        <p>{{configData.page2.xinhui}}</p>
-                        <h2>- 求职意向</h2>
-                        <p>{{configData.page2.qiuzhi}}</p>
-                        <h2>- 关于我</h2>
-                        <p>{{configData.page2.guanyuwo}}</p>
-                        <p>I hope I can make continuous progress ~</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page page3" id="page3" name="page3">
-            <div class="page3-box container">
-                <h1 class="page-title">My Services</h1>
-                <div class="row">
-                    <div class="col-xs-12 col-md-3 box-item" v-for="(item,index) in configData.page3" :key="index">
-                          <div class="box-xz"><i class="iconfont" :class="item.icon"></i></div>
-                          <div class="box-info">
-                           <h5>{{item.title}}</h5>
-                           <p v-for="(item2,index2) in item.msg" :key="index2">{{item2}}<br></p>
-                           </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page page4" id="page4" name="page4">
-            <div class="page3-box container">
-                <div class="row">
-                    <div class="col-xs-12 col-md-6">
-                        <div class="box-left">
-                            <h1 class="page-title">My Mastering</h1>
-                            <div class="left-body">
-                                <ul>
-                                    <li v-for="(item,index) in configData.page4.course" :key="index">
-                                        <div class="title orange"></div>
-                                        <div class="date">{{item.date}}</div>
-                                        <div class="desc">
-                                            <h3>{{item.desc.title}}</h3>
-                                            <h4 v-for="(item2,index2) in item.desc.list" :key="index2">{{item2}}</h4>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-md-6 box-right">
-                        <div class="row singlelist">
-                            <div class="col-lg-6" v-for="(item,index) in configData.page4.singlelist" :key="index">
-                                <div class="slist-item">
-                                    <div class="sitem-icon"><i class="iconfont icon-biaoqian"></i></div>
-                                    <div class="sitem-info">
-                                        <span>{{item.title}}</span>
-                                        <h5>{{item.text}}</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="proresslist row">
-                            <div class="proress col-xs-12 col-md-6" v-for="(item,index) in configData.page4.proresslist" :key="index">
-                                <div class="propress-title">{{item.title}}
-                                </div>
-                                <div class="propress-bar">
-                                    <div class="bar-propress"><span>{{item.value}}</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page page5" id="page5" name="page5">
-            <div class="page3-box container">
-                <h1 class="page-title">My Production </h1>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12" v-for="(item,index) in configData.page5">
-                            <a class="box-item" :href="item.href">
-                                <div class="item-zhez">
-                                    <h4>{{item.title}}</h4>
-                                    <P>{{item.content}}</P>
-                                </div>
-                                <img :src="item.image">
-                            </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page page6" id="page6" name="page6">
-            <div class="page3-box container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-lg-offset-3 col-md-offset-3 col-sm-offset-3">
-                        <div class="box-page">
-                            <h2>PLEASE <span>CONTACT ME</span></h2>
-                            <ul class="page-tag"><li style="color: orangered">灵感</li>
-                                <li style="color: lightseagreen">代码</li>
-                                <li style="color: dodgerblue">梦想</li>
-                                <li style="color: dodgerblue">未来</li></ul>
-                            <P> 兴趣所在<br>
-                                代码也是一种艺术</P>
-                                为之而付出的一切努力都是值得的<br>
-                            <ul class="page-list">
-                                <li><a role="button"
-                                       data-toggle="tooltip" data-placement="top" title="Github"
-                                       :href="configData.page6.github">
-                                <i class="iconfont icon-github"></i></a></li>
-
-                                <li><a role="button"
-                                       data-toggle="tooltip" data-placement="top" title="哔哩哔哩" :href="configData.page6.bili">
-                                    <i class="iconfont icon-bilibili"></i></a></li>
-                                <li><a role="button"
-                                       data-toggle="tooltip" data-placement="top" title="邮箱"
-                                       :href="configData.page6.email"><i class="iconfont icon-youxiang"></i></a></li>
-
-                                <li><a class="element"
-                                       role="button"
-                                       data-placement="top"
-                                       tabindex="0"
-                                       data-toggle="popover"
-                                       data-trigger="focus"
-                                       title="我的微信"
-                                       data-html="true"
-                                       :data-content="configData.page6.weixin"><i class="iconfont icon-weixin1"></i></a></li>
-                                <li><a class="element"
-                                       role="button"
-                                       data-placement="top"
-                                       tabindex="1"
-                                       data-toggle="popover"
-                                       data-trigger="focus"
-                                       data-html="true"
-                                       title="我的QQ"
-                                       :data-content="configData.page6.qq"><i class="iconfont icon-qq"></i></a></li>
-                                <li><a role="button"
-                                       :href="configData.page6.zhihu"
-                                       data-toggle="tooltip" data-placement="top" title="知乎"><i class="iconfont icon-zhihu-copy"></i></a></li></ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <div id="navbar">
-            <div class="navbar-line"></div>
-            <div class="navbar-list">
-                <a class="navbtn" href="#page1"></a>
-                <a class="navbtn" href="#next-one"></a>
-                <a class="navbtn" href="#page3"></a>
-                <a class="navbtn" href="#page4"></a>
-                <a class="navbtn" href="#page5"></a>
-                <a class="navbtn" href="#page6"></a>
-            </div>
-<!--       取消了播放音乐模块     -->
-<!--            <div id="audio">-->
-<!--&lt;!&ndash;            autoplay="autoplay"取消自动播放-->
-<!--                preload="auto" 取消预加载&ndash;&gt;-->
-<!--                <audio  loop  volume="0.2">-->
-<!--                    <source src="./src/Chance.mp3" type="audio/mpeg" >-->
-<!--                </audio>-->
-<!--                <div class="audio-controls">-->
-<!--                    <img src="./src/img/toux.jpeg">-->
-<!--                </div>-->
-<!--                <span class="iconfont icon-play_fill" id="audioClick"></span>-->
-<!--            </div>-->
-        </div>
-        <div id="navbar-banner">
-            <div class="container">
-                <div class="clearFix"><span class="iconfont icon-lie slideBut" id="slideBut"></span></div>
-                <ul id="slideList">
-                    <li><a class="navbtn" href="#page1">Home</a></li>
-                    <li><a class="navbtn" href="#next-one">About Me</a></li>
-                    <li><a class="navbtn" href="#page3">My services</a></li>
-                    <li><a class="navbtn" href="#page4">Mastering</a></li>
-                    <li><a class="navbtn" href="#page5">Production</a></li>
-                    <li><a class="navbtn" href="#page6">Please Contact Me</a></li>
+                  </li>
+                  {{/each}}
                 </ul>
+              </div>
             </div>
+          </div>
+          <div class="col-xs-12 col-md-6 box-right">
+            <div class="row singlelist">
+              {{#each page4.singlelist}}
+              <div class="col-lg-6">
+                <div class="slist-item">
+                  <div class="sitem-icon"><i class="iconfont icon-biaoqian"></i></div>
+                  <div class="sitem-info">
+                    <span>{{this.title}}</span>
+                    <h5>{{this.text}}</h5>
+                  </div>
+                </div>
+              </div>
+              {{/each}}
+            </div>
+            <div class="proresslist row">
+              {{#each page4.proresslist}}
+              <div class="proress col-xs-12 col-md-6">
+                <div class="propress-title">{{this.title}}
+                </div>
+                <div class="propress-bar">
+                  <div class="bar-propress"><span>{{this.value}}</span></div>
+                </div>
+              </div>
+              {{/each}}
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
 
-    </section>
+    <div class="page page5" id="page5" name="page5">
+      <div class="page3-box container">
+        <h1 class="page-title">My Production </h1>
+        <div class="row">
+          {{#each page5}}
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a class="box-item" href="{{this.href}}">
+              <div class="item-zhez">
+                <h4>{{this.title}}</h4>
+                <P>{{this.content}}</P>
+              </div>
+              <img src="./src/img/{{this.image}}">
+            </a>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <div class="page page6" id="page6" name="page6">
+      <div class="page3-box container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-lg-offset-3 col-md-offset-3 col-sm-offset-3">
+            <div class="box-page">
+              <h2>PLEASE <span>CONTACT ME</span></h2>
+              <ul class="page-tag">
+                <li style="color: orangered">灵感</li>
+                <li style="color: lightseagreen">代码</li>
+                <li style="color: dodgerblue">梦想</li>
+                <li style="color: dodgerblue">未来</li>
+              </ul>
+              <P> 兴趣所在<br>
+                代码也是一种艺术</P>
+              为之而付出的一切努力都是值得的<br>
+              <ul class="page-list">
+                <li><a role="button" data-toggle="tooltip" data-placement="top" title="Github" href="{{page6.github}}">
+                    <i class="iconfont icon-github"></i></a></li>
+
+                <li><a role="button" data-toggle="tooltip" data-placement="top" title="哔哩哔哩" href="{{page6.bili}}">
+                    <i class="iconfont icon-bilibili"></i></a></li>
+                <li><a role="button" data-toggle="tooltip" data-placement="top" title="邮箱" href="{{page6.email}}"><i
+                      class="iconfont icon-youxiang"></i></a></li>
+
+                <li><a class="element" role="button" data-placement="top" tabindex="0" data-toggle="popover"
+                    data-trigger="focus" title="我的微信" data-html="true" data-content="{{page6.weixin}}"><i
+                      class="iconfont icon-weixin1"></i></a></li>
+                <li><a class="element" role="button" data-placement="top" tabindex="1" data-toggle="popover"
+                    data-trigger="focus" data-html="true" title="我的QQ" data-content="{{page6.qq}}"><i
+                      class="iconfont icon-qq"></i></a></li>
+                <li><a role="button" href="{{page6.zhihu}}" data-toggle="tooltip" data-placement="top" title="知乎"><i
+                      class="iconfont icon-zhihu-copy"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div id="navbar">
+      <div class="navbar-line"></div>
+      <div class="navbar-list">
+        <a class="navbtn" href="#page1"></a>
+        <a class="navbtn" href="#next-one"></a>
+        <a class="navbtn" href="#page3"></a>
+        <a class="navbtn" href="#page4"></a>
+        <a class="navbtn" href="#page5"></a>
+        <a class="navbtn" href="#page6"></a>
+      </div>
+      <!--       取消了播放音乐模块     -->
+      <!-- <div id="audio">
+       autoplay="autoplay"取消自动播放 preload="auto" 取消预加载
+        <audio loop volume="0.2">
+          <source src="./src/Chance.mp3" type="audio/mpeg">
+        </audio>
+        <div class="audio-controls">
+          <img src="./src/img/toux.jpeg">
+        </div>
+        <span class="iconfont icon-play_fill" id="audioClick"></span>
+      </div> -->
+    </div>
+    <div id="navbar-banner">
+      <div class="container">
+        <div class="clearFix"><span class="iconfont icon-lie slideBut" id="slideBut"></span></div>
+        <ul id="slideList">
+          <li><a class="navbtn" href="#page1">Home</a></li>
+          <li><a class="navbtn" href="#next-one">About Me</a></li>
+          <li><a class="navbtn" href="#page3">My services</a></li>
+          <li><a class="navbtn" href="#page4">Mastering</a></li>
+          <li><a class="navbtn" href="#page5">Production</a></li>
+          <li><a class="navbtn" href="#page6">Please Contact Me</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
 
 </div>
-
