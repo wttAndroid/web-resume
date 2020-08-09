@@ -1,7 +1,7 @@
 @import "iconfont.css";
 
 
-.clearFix::after{
+.clearFix::after {
   content: '';
   clear: both;
   display: block;
@@ -9,6 +9,7 @@
   width: 0;
   height: 0;
 }
+
 .clearFix {
   zoom: 1;
 }
@@ -16,29 +17,40 @@
 
 //页面切入动画
 .animateload {
-  animation:loadanimation 1.5s;
+  animation: loadanimation 1.5s;
   animation-fill-mode: forwards;
   animation-direction: alternate;
 }
+
 @keyframes loadanimation {
-  0% {opacity: 0;}
-  40% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
+
 .container {
   //opacity: 0;
 }
 
 //锚点下一页
 @keyframes nextbutanimation {
-    from {
-      top: 20%;
-      opacity: 1;
-    }
-    to {
-      top: 60%;
-      opacity: 0;
-    }
+  from {
+    top: 20%;
+    opacity: 1;
+  }
+
+  to {
+    top: 60%;
+    opacity: 0;
+  }
 }
 
 
@@ -48,6 +60,7 @@
     width: 0;
   }
 }
+
 @keyframes blink-caret {
   50% {
     border-color: transparent;
@@ -56,13 +69,22 @@
 
 #wrap {
   position: relative;
-  //height: 3000px;
-  background-image: url("../../src/img/bg.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  background-size: 100% 100%;
+
+  ::after {
+    content: '';
+    position: fixed;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: url("../../src/img/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-size: 100% 100%;
+  }
 
   .page {
     min-height: 100vh;
@@ -71,7 +93,8 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    color:white;
+    color: white;
+
     .page-title {
       color: #ff4a57;
       text-align: center;
@@ -88,6 +111,7 @@
         display: none;
       }
     }
+
     .next-bt {
       position: absolute;
       width: 30px;
@@ -99,18 +123,21 @@
       background-color: transparent;
       transition: all 1s;
       color: #dadada;
+
       span {
-          position: absolute;
-          top: 120%;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 111px;
-          text-align: center;
+        position: absolute;
+        top: 120%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 111px;
+        text-align: center;
       }
     }
+
     .next-bt:hover {
       color: darkorange;
     }
+
     .next-bt:after {
       position: absolute;
       content: '';
@@ -129,36 +156,42 @@
         border-radius: 10px;
         padding: 30px 0;
         transition: all 1s;
-        text-align:center;
-          h1 {
-            font-size: 60px;
-            line-height: 80px;
-            font-weight: 800;
-            font-family: cursive,'Lato', sans-serif;
-          }
-          .box-info {
-            font-family: 微軟正黑體;
-            font-size: 35px;
-          }
-          .box-font {
-            color: #dadada;
-            .box-change {
-              vertical-align: bottom;
-              display: inline-block;
-              border-right: .1em solid;
-              width: 16ch; /* 1.6625倍字数 */
-              white-space: nowrap;
-              overflow: hidden;
-              animation: typing 2s steps(16, end), /* step数等于字数 */
+        text-align: center;
+
+        h1 {
+          font-size: 60px;
+          line-height: 80px;
+          font-weight: 800;
+          font-family: cursive, 'Lato', sans-serif;
+        }
+
+        .box-info {
+          font-family: 微軟正黑體;
+          font-size: 35px;
+        }
+
+        .box-font {
+          color: #dadada;
+
+          .box-change {
+            vertical-align: bottom;
+            display: inline-block;
+            border-right: .1em solid;
+            width: 16ch;
+            /* 1.6625倍字数 */
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 2s steps(16, end),
+              /* step数等于字数 */
               blink-caret .5s step-end infinite alternate;
-            }
           }
+        }
       }
 
       .box-page:hover {
         color: white;
-        box-shadow: 0px 0px 50px 0px  black;
-        background-color: rgba(255,255,255,.2);
+        box-shadow: 0px 0px 50px 0px black;
+        background-color: rgba(255, 255, 255, .2);
       }
     }
   }
@@ -167,6 +200,7 @@
     .page2-box {
       .row {
         text-align: center;
+
         .box-image::after {
           content: '';
           position: absolute;
@@ -177,16 +211,18 @@
           top: 10%;
           left: 30%;
           z-index: -1;
-          background-color:rgba(255,255,255,.3);
+          background-color: rgba(255, 255, 255, .3);
           border-top-left-radius: 69% 70%;
           border-top-right-radius: 37% 68%;
           border-bottom-right-radius: 50% 32%;
           border-bottom-left-radius: 50% 30%;
         }
+
         .box-image {
           position: relative;
           display: block;
           margin: 0 auto 30px;
+
           img {
             max-width: 70%;
             width: auto;
@@ -200,21 +236,26 @@
             transition: all .3s;
           }
         }
-        img:hover{
-            box-shadow: 0px 0px 10px 1px #5ba2d1;
+
+        img:hover {
+          box-shadow: 0px 0px 10px 1px #5ba2d1;
         }
+
         .box-info {
           text-align: left;
+
           h1 {
             text-align: center;
             font-weight: bold;
             color: #ff4a57;
             margin: 30px 0;
           }
+
           h2 {
             font-size: 17px;
             font-weight: bold;
           }
+
           p {
             text-indent: 2em;
             color: #dadada;
@@ -228,31 +269,38 @@
     .page3-box {
       .row {
         text-align: center;
+
         .box-item:hover {
           transform: scale(1.1);
         }
+
         .box-item {
           transition: all 1s;
-           margin: 10px 0;
-          .box-xz   {
+          margin: 10px 0;
+
+          .box-xz {
             margin: 0 auto;
             background-image: url("../../src/img/triangle.png");
             background-size: 100% 100%;
             width: 200px;
-            height:200px;
+            height: 200px;
             line-height: 200px;
+
             .iconfont {
               font-size: 50px;
             }
           }
+
           .box-info {
             color: #dadada;
-            font-family:'Poppins', sans-serif;
+            font-family: 'Poppins', sans-serif;
+
             h5 {
               color: #ff4a57;
               font-family: "Quicksand", sans-serif;
               font-weight: bold;
             }
+
             p {
               line-height: 30px;
               font-family: "Yu Gothic";
@@ -270,21 +318,26 @@
           color: white;
           font-size: 20px;
         }
+
         .box-right {
           font-family: "Quicksand", sans-serif;
+
           .proresslist {
             .proress {
               margin: 20px 0;
+
               .propress-title {
                 font-weight: bold;
-                padding:10px 10px 10px 0;
+                padding: 10px 10px 10px 0;
               }
+
               .propress-bar {
                 display: flex;
                 height: 15px;
                 background-color: #e9ecef;
                 overflow: hidden;
                 border-radius: 2px;
+
                 .bar-propress {
                   width: 0%;
                   height: 100%;
@@ -292,6 +345,7 @@
                   //animation: slideInLeft 2s;
                   transition: all 3s;
                   position: relative;
+
                   span {
                     font-size: 12px;
                     font-weight: bold;
@@ -303,11 +357,13 @@
               }
             }
           }
+
           .singlelist {
             .slist-item {
               display: flex;
               align-items: center;
               margin-bottom: 20px;
+
               .sitem-icon {
                 background-size: 100% 100%;
                 width: 50px;
@@ -316,12 +372,15 @@
                 background-color: #ff4a57;
                 text-align: center;
               }
+
               .sitem-info {
                 margin-left: 20px;
                 font-family: Quicksand;
+
                 span {
                   font-weight: bold;
                 }
+
                 h5 {
                   color: rgba(255, 199, 45, 0.76);
                 }
@@ -332,6 +391,7 @@
 
         .box-left {
           padding: 20px 0;
+
           .left-body {
 
             li:hover {
@@ -339,12 +399,14 @@
                 transform: scale(1.1);
               }
             }
+
             ul {
               position: relative;
               overflow: hidden;
               list-style: none;
               padding: 1em 0 0 2em;
               margin: 0;
+
               .title {
                 z-index: 1;
                 width: 1.5rem;
@@ -354,20 +416,24 @@
                 margin-left: -0.5rem;
                 margin-top: 7%;
               }
+
               .date {
                 width: 23%;
                 font-size: 0.75em;
                 padding-top: 0.40rem;
                 padding-right: 2rem;
               }
+
               .desc {
                 transition: all 1s;
                 width: 65%;
+
                 h3 {
                   font-size: 1.1em;
                   font-weight: 400;
                   margin: 0 0 10px 0;
                 }
+
                 h4 {
                   margin: 0;
                   font-size: 0.8em;
@@ -377,6 +443,7 @@
                 }
               }
             }
+
             ul::before {
               content: '';
               height: 100%;
@@ -386,6 +453,7 @@
               top: 0;
               z-index: -1;
             }
+
             div {
               vertical-align: top;
               margin: 1em 0;
@@ -404,21 +472,25 @@
           transform: scale(1.1);
           transition: all .5s ease;
           z-index: 1;
+
           .item-zhez {
             visibility: visible;
           }
         }
+
         .box-item {
           position: relative;
           overflow: hidden;
           margin-bottom: 20px;
           border-radius: 10px;
           display: inline-block;
+
           img {
             width: 100%;
-            min-height:220px;
+            min-height: 220px;
             max-height: 220px;
           }
+
           .item-zhez {
             position: absolute;
             text-align: left;
@@ -431,11 +503,13 @@
             bottom: 0;
             left: 0;
             top: 0;
-            background-color: rgba(0,0,0,.3);
+            background-color: rgba(0, 0, 0, .3);
             visibility: hidden;
+
             h4 {
               flex: 1;
             }
+
             P {
               flex: 3;
             }
@@ -451,39 +525,47 @@
         .box-page {
           padding: 100px;
           background: linear-gradient(#00ffd4, #00ffd4) left top,
-          linear-gradient(#00ffd4, #00ffd4) left top,
-          linear-gradient(#00ffd4, #00ffd4) right top,
-          linear-gradient(#00ffd4, #00ffd4) right top,
-          linear-gradient(#00ffd4, #00ffd4) left bottom,
-          linear-gradient(#00ffd4, #00ffd4) left bottom,
-          linear-gradient(#00ffd4, #00ffd4) right bottom,
-          linear-gradient(#00ffd4, #00ffd4) right bottom;
+            linear-gradient(#00ffd4, #00ffd4) left top,
+            linear-gradient(#00ffd4, #00ffd4) right top,
+            linear-gradient(#00ffd4, #00ffd4) right top,
+            linear-gradient(#00ffd4, #00ffd4) left bottom,
+            linear-gradient(#00ffd4, #00ffd4) left bottom,
+            linear-gradient(#00ffd4, #00ffd4) right bottom,
+            linear-gradient(#00ffd4, #00ffd4) right bottom;
           background-repeat: no-repeat;
           background-size: 5px 60px, 60px 5px;
           text-align: center;
+
           .page-tag {
             font-size: 20px;
           }
+
           h2 {
             display: inline-block;
             padding-bottom: 5px;
             border-bottom: 2px solid orangered;
+
             span {
               color: orangered;
             }
           }
+
           ul {
             list-style: none;
             display: flex;
+
             li {
               flex: 1;
             }
           }
+
           p {
             line-height: 30px;
           }
+
           .page-list {
             margin-top: 30px;
+
             .iconfont {
               font-size: 30px;
               color: white;
@@ -493,6 +575,7 @@
       }
     }
   }
+
   /**
    * 导航部分
    */
@@ -501,6 +584,7 @@
     right: 50px;
     top: 25%;
     overflow: hidden;
+
     .navbar-line {
       position: absolute;
       left: 50%;
@@ -510,6 +594,7 @@
       background: url("../img/dot.png");
       z-index: -1;
     }
+
     .navbar-list {
       .navbtn {
         display: block;
@@ -523,10 +608,12 @@
         border: 4px solid #e8e8e8;
         box-sizing: content-box;
       }
+
       .navbtn:hover {
         border: 4px solid white;
       }
     }
+
     #audio {
       position: relative;
       width: 60px;
@@ -551,6 +638,7 @@
           height: 100%;
         }
       }
+
       span {
         width: 100%;
         height: 100%;
@@ -561,19 +649,22 @@
         text-align: center;
         font-size: 25px;
         color: black;
-        background:none;
+        background: none;
         transition: all .5s;
       }
     }
+
     #audio:hover {
       span {
-        background: rgba(0,0,0,.3);
+        background: rgba(0, 0, 0, .3);
       }
     }
   }
+
   #navbar-banner {
     display: none;
   }
+
   @media screen and (max-width: 800px) {
     #navbar-banner {
       display: block;
@@ -581,7 +672,8 @@
       top: 0;
       left: 0;
       width: 100%;
-      background-color: rgba(255,255,255,.3);
+      background-color: rgba(255, 255, 255, .3);
+
       .iconfont {
         height: 60px;
         line-height: 60px;
@@ -589,21 +681,26 @@
         color: white;
         float: right;
       }
+
       ul {
         display: none;
         list-style: none;
+
         li {
           padding: 5px 0;
+
           a {
             text-decoration: none;
             color: white;
           }
         }
+
         li:hover {
-          background-color: rgba(255,255,255,.4);
+          background-color: rgba(255, 255, 255, .4);
         }
       }
     }
+
     #navbar {
       display: none;
     }
@@ -616,8 +713,9 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
-    transform:rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -627,16 +725,20 @@
  * 加载页面
  */
 @keyframes ldanimation {
-  0%,100%{
+
+  0%,
+  100% {
     height: 40px;
     background: lightgreen;
   }
-  50%{
+
+  50% {
     height: 70px;
     margin: -15px 0;
     background: lightblue;
   }
 }
+
 #loadding {
   position: fixed;
   left: 0;
@@ -648,6 +750,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   span {
     display: inline-block;
     width: 8px;
@@ -657,15 +760,16 @@
     animation: ldanimation .5s linear infinite;
     margin: 0 10px;
   }
-  span:nth-child(2){
-    animation-delay:0.1s;
+
+  span:nth-child(2) {
+    animation-delay: 0.1s;
   }
-  span:nth-child(3){
-    animation-delay:0.2s;
+
+  span:nth-child(3) {
+    animation-delay: 0.2s;
   }
-  span:nth-child(4){
-    animation-delay:0.3s;
+
+  span:nth-child(4) {
+    animation-delay: 0.3s;
   }
 }
-
-
