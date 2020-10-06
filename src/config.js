@@ -93,7 +93,7 @@ export default {
     title: '图书管理系统',
     content: 'Vue,NodeJs图书管理系统前后端',
     image: 'box3.jpg',
-    href: '图书管理系统前端'
+    href: 'https://gitee.com/wttAndroid/book_admin'
   }, {
     title: '校园约吧',
     content: 'Vue,NodeJs移动端校园项目前后端',
@@ -121,7 +121,7 @@ export default {
     bili: '',
     email: 'Mailto:1457321681@qq.com?Subject=邮箱标题&Body=邮箱内容！',
     zhihu: '',
-    weixin: "<img style='width:120px' src='../src/img/weix.jpg' alt='加载失败'>",
-    qq: "<img style='width:120px' src='../src/img/qq.jpg' alt='加载失败'>"
+    weixin: "<img style='width:120px' src='http://wttandroid.gitee.io/wttandroid.github.io/src/img/weix.jpg' alt='加载失败'>",
+    qq: "<img style='width:120px' src='http://wttandroid.gitee.io/wttandroid.github.io/src/img/qq.jpg' alt='加载失败'>"
   }
 }
