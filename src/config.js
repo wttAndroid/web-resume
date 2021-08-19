@@ -7,48 +7,48 @@ export default {
   // page2部分
   page2: {
     authorImg: 'page1.jpg', // 作者头像
-    xinhui: '我叫卫婷婷，是一名刚步入社会的毕业生，毕业于晋城职业技术学院：软件与信息服务专业。', // 幸会
-    qiuzhi: '前端开发，利用各种技巧实现交互丰富的界面。', // 求职意向
-    guanyuwo: '起初学习的是java，安卓开发，后来转战到前端开发。我集中利用大学学习时间进一步学习了html5,css3,javaScript和Vue框架等等，自学做Vue有关的Demo' // 关于我
+    xinhui: '我叫卫婷婷，是一名在读的大三学生。', // 幸会
+    qiuzhi: '前端开发', // 求职意向
+    guanyuwo: '掌握了前端js、html、css基本技术和Vue框架、UI框架，nodejs等等，有着公司项目实战的经验和一些java安卓开发经历。希望可以和大家一起学习，共同进步！' // 关于我
   },
   // page3部分
   page3: [{
+    icon: 'icon-tubiao-',
+    title: 'UI设计',
+    msg: ['PS切图、界面排版']
+  },{
     icon: 'icon-diannao', // 图标
-    title: 'PS切图', // 标题
-    msg: ['从PSD上切出页面需要的图片'] //介绍
+    title: '网页制作', // 标题
+    msg: ['响应式页面', 'css、scss动画效果',] //介绍
   }, {
     icon: 'icon-qianbi1',
-    title: '网页制作',
-    msg: ["响应式页面", "css动画效果"]
-  }, {
-    icon: 'icon-tubiao-',
     title: '前端功能',
-    msg: ['JS完成常见的前端功能', '用AJAX读取后台数据']
-  }, {
+    msg: ['JS完成常见的交互功能', '用AJAX读取后台数据且渲染']
+  },  {
     icon: 'icon-shouji',
-    title: '移动端',
-    msg: ['移动端页面的书写']
+    title: '框架',
+    msg: ['vue框架','UI框架、express框架、mysql',]
   }],
   // page4部分
   page4: {
     // 我的历程
     course: [{
-      date: '2020/6——毕业', // 时间
+      date: '2020/9——至今', // 时间
       desc: { // 经历
-        title: '晋城职业技术学院',
-        list: ['加入508工作室组织 / 维护508工作室', '学习搭建Vue基本Demo', 'HTML搭建个人简历网站']
+        title: '山西传媒学院',
+        list: ['山西省职业技能大赛web前端开发一等奖', '专升本上岸', '软件开发公司实习']
       }
     }, {
-      date: '2019/9——2020/6',
+      date: '2019/9——2020/9',
       desc: {
         title: '晋城职业技术学院',
-        list: ['学习JavaScript / jq / css / html / vue/ PSD切图等', '构建页面 / 利用JS、CSS3书写前端功能，让页面更充实丰富。并将代码上传到代码托管平台上', '获得Web前段开发1+X证书']
+        list: ['学习前端语言', '构建页面 / 利用JS、CSS3等制作网站，vue有关项目', '维护508工作室','获得Web前段开发1+X证书','普通话二级甲等','国家励志奖学金']
       }
     }, {
       date: '2018/9——2019/9',
       desc: {
         title: '晋城职业技术学院',
-        list: ['学习java语言', '利用Android、sql等书写页面功能', '参加大学生职业院校移动互联技能大赛', '获得全国计算机等级二级证书', '国家励志奖学金']
+        list: ['学习java语言', '利用Android、sql等制作app', '参加山西省职业院校移动互联技能大赛', '全国计算机等级二级证书', '国家励志奖学金']
       }
     }],
     // 我的拓展技能掌握
@@ -67,20 +67,20 @@ export default {
     }],
     // 我的基本技能掌握
     proresslist: [{
-      title: 'HTML',
-      value: '85%'
+      title: 'HTML、CSS、SCSS',
+      value: '90%'
     }, {
-      title: 'CSS',
-      value: '80%'
+      title: 'JS、JQ',
+      value: '90%'
     }, {
-      title: 'JS',
-      value: '75%'
+      title: 'Vue',
+      value: '90%'
     }, {
       title: 'NodeJs',
       value: '80%'
     }, {
-      title: 'Vue',
-      value: '90%'
+      title: 'sql',
+      value: '80%'
     }]
   },
   // page5部分
