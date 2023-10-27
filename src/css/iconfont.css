@@ -6,7 +6,9 @@
     url('//at.alicdn.com/t/font_1720723_l9n23r4l0si.ttf?t=1586243025585') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
     url('//at.alicdn.com/t/font_1720723_l9n23r4l0si.svg?t=1586243025585#iconfont') format('svg'); /* iOS 4.1- */
 }
-
+*{
+    font-size: 20;
+}
 .iconfont {
     font-family: "iconfont" !important;
     font-size: 16px;
